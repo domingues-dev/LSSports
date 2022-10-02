@@ -4,25 +4,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "LSSports",
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "LSSports",
-            targets: ["LSSports"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "LSSports",
-            dependencies: []),
-        .testTarget(
-            name: "LSSportsTests",
-            dependencies: ["LSSports"]),
-    ]
+  name: "LSSports",
+  platforms: [.iOS(.v16)],
+  products: [
+    .library(name: "LSModels", targets: ["LSModels"]),
+    .library(name: "SportsRouter", targets: ["SportsRouter"])
+  ],
+  dependencies: [
+    .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.3.1")
+  ],
+  targets: [
+    .target(
+      name: "LSModels",
+      dependencies: [
+      ],
+      resources: [
+      ]
+    ),
+    .target(
+      name: "SportsRouter",
+      dependencies: [
+        "LSModels",
+        .product(name: "URLRouting", package: "swift-url-routing")
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    )
+  ]
 )

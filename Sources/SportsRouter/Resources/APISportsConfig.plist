@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>COUNTRY_FLAG_URL_FORMAT</key>
+	<string>https://github.com/hampusborgos/country-flags/blob/main/png250px/%@.png?raw=true</string>
+	<key>BASE_URL</key>
+	<string>https://v3.football.api-sports.io/</string>
+	<key>API_KEY</key>
+	<string>248d5483cb54afef206939bdd79a6657</string>
+</dict>
+</plist>
